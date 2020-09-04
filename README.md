@@ -1,0 +1,2 @@
+# Inventario
+Software de Inventario
