@@ -13,7 +13,7 @@ class CreateClienteTable extends Migration
      */
     public function up()
     {
-        Schema::create('cliente', function (Blueprint $table) {
+        Schema::create('Cliente', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('tipo_documento');
             $table->string('nombre');
@@ -21,9 +21,11 @@ class CreateClienteTable extends Migration
             $table->string('direccion');
             $table->string('ciudad');
             $table->string('telefono');
-            $table->string('user_id'); 
+            //$table->bigInteger('Id_Documento')->unsigned(); 
+           // $table->bigInteger('user_id')->unsigned(); 
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
+            //$table->foreign('Id_Documento')->references('id')->on('users');
+           // $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -34,6 +36,6 @@ class CreateClienteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cliente');
+        Schema::dropIfExists('Cliente');
     }
 }
